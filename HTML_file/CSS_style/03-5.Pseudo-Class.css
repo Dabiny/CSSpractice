@@ -1,0 +1,34 @@
+/* Pseudo-Class Selector (가상클래스 선택자) 의사 클래스 선택자
+    셀렉터들보다 더 디테일하고 적은범위를 선택할때 쓰는 셀렉터이다.
+    ':'을 사용해서 더 범위를 좁힌다. 
+    
+    hover, active, focus 
+    유저가 마우스를 올리거나 클릭할거 같은(이벤트들)것을 동적으로 바뀌게한다.    
+
+    * :active 의사 클래스를 정의한 스타일은 LVHA순서로 작성하는게 좋다.
+    (:link -> :visited -> :hover -> :active) 순
+*/
+
+input[type=button]{
+    background-color: hotpink;
+    border: none;
+} /* 마우스를 올렸을떄 색이 바뀌지않는다 */
+
+/* 01. hover */
+input[type=button]:hover{
+    background-color: pink;
+    color: white
+} /* 마우스를 올렸을때 색을 바꾸는 과정 */
+
+/*02. active 
+    마우스를 눌렀다가 뗼때 상태를 나타내는것 */
+    input[type=button]:active{
+        background-color: crimson;
+    } 
+
+
+/* 03. :focus 
+    키보드 탭키를 누르게 되면 바뀜 or text 인풋을 클릭하게되면 백그라운드가 바뀜*/
+input[type=text]:focus{
+    background-color: violet;
+} 

@@ -1,0 +1,20 @@
+/* Pseudo-Class Selector (가상클래스 선택자) 의사 클래스 선택자
+    셀렉터들보다 더 디테일하고 적은범위를 선택할때 쓰는 셀렉터이다.
+    ':'을 사용해서 더 범위를 좁힌다. 
+    
+    selector:not(selector)
+    - :앞에있는 셀렉터들을 고르고 not(안에있는 셀렉터를) 제외한 나머지를 스타일링한다.
+
+*/
+
+input:not(.pw){
+    background-color: indianred;
+}
+
+input:not([type=submit]){
+    background-color: blueviolet;
+}
+
+input:not([placeholder]){
+    
+}
