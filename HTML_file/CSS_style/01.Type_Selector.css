@@ -1,0 +1,30 @@
+/* Type Selector */
+h2 {
+    color: purple;
+}
+/* 특정요소 하나를 바꾸기 위해 쓰면안됨, h2 전부 다 바뀌어버림
+    보통은 css상단부에 작성함. 그리고 일관성있게 스타일링 할때 쓴다. */
+
+
+/* ID Selector */
+/* 특정 아이디 태그를 가진애들만 바꾸기 "#"을 사용해서 쓰면된다. */
+#welcome-title {
+    color: red;
+}
+
+
+/* Class Selector */
+/* 특정 클래스 태그를 가진애들만 바꾸기 "."을 사용해서 쓰면된다. */
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.movie{
+    color: aqua;
+}
+/* 캐스캐이딩 원칙에 의해서 blue와 red를 movie가 가려버림*/
+
