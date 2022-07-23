@@ -1,0 +1,28 @@
+/* Pseudo-Element Selector (가상 요소 선택자) 
+
+    first-letter, first-line, selection
+*/
+
+/* 01.first-letter 
+    첫번째글자에만 적용한다. 기준은 비포요소의 첫번째 글자로 인식된다.(before가 우선순위가 높다.) */
+.lorem::first-letter{
+    color: red;
+    font-size: 30px;
+}
+
+.lorem::before {
+    content: 'BEFORE';
+}
+
+/* 02.first-line 
+    첫줄만 적용된다. 아무리 늘려도줄여도 첫줄에만 적용된다.*/
+.lorem::first-line{
+    color:blue;
+}
+
+/* 03. selection
+    선택영역에대한 (드래그) 것이 변경된다.
+     */
+.lorem::selection{
+     color:blue;
+}

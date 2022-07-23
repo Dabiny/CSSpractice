@@ -1,0 +1,58 @@
+/*
+    상속 제어하기 - initial, inherit, unset
+
+    1. 자기에게 스타일링이 되어있지 않으면 내 부모의 스타일링을 물려(상속)받는다. (모든요소가 되는건 아님)
+    2. 
+*/
+div{
+    border: 1px solid silver;
+    margin: 2px;
+}
+
+/* 부모에게 상속받아 모두 파랑색으로 바뀜 */
+.parent{
+    color: blue;
+    font-size: 7px;
+    /* border: initial; */
+}
+
+
+/* 01. Initial 
+    상속을 개별적으로 끊을 수 있는 키워드 */
+
+/* .child2{
+    color: initial;
+    font-size: initial;
+    
+} */
+
+
+/* 02. all
+    상속을 끊을 수 있는 키워드 (모든 값을 다 초기화시킨다) */
+/* .child2{
+    all: initial;
+} */
+
+
+.child1 {
+    color: pink;
+}
+
+.parent1, .parent2{
+    color:blue;
+}
+
+/* 03. inherit  */
+
+.parent2 .child1{
+    /* color: inherit; */
+    /* all: inherit; 도사용가능 */
+    all: unset;
+}
+
+
+/* 04. unset 
+    1. 부모로부터 상속받을 값이 있을 때 : inherit로 동작
+    2. 부모로부터 상속받을 값이 없을 때 : initial로 동작
+    부로로부터 상속받은 파랑 폰트값은 그대로 가져가고 그 외의 것들은 초기화 시켜버려서 보더 이런것들은 다 초기화됨.
+*/
