@@ -1,0 +1,20 @@
+/* box-sizing ⭐️⭐️⭐️
+요소의 너비와 높이를 계산하는 방법을 지정한다.
+
+값
+content-box (기본값) : 각각 px을 줬을때 박스 너비를 줌에따라 원래의 px보다 더 추가되어 커지는 현상이 발생한다. 
+
+border-box (콘텐츠 박스를 보더박스로 변경)
+총 가로길이를 300px로 만들어준다. 진짜요소의 가로길이가 된다. 완전히 보더까지 width,height를 적용한다.
+*/
+
+.box {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 30px solid blue;
+
+    box-sizing: border-box;
+    background-color: skyblue;
+}
+

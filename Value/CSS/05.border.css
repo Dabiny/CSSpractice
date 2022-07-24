@@ -1,0 +1,45 @@
+/* border 박스모델
+
+border-style: none
+여러 스타일링을 적용할 수 있음.
+
+border-width: this, medium, thick (계산된 px값이 브라우저별로 다를 수 있다.) 디자인적으로 할거면 length를 사용하는게 좋다.
+테두리의 두께를 말한다. 
+
+border-color: 
+테두리 색상을 말한다. 위아래좌우 다르게 적용할 수 있다.
+
+border: (short hand) color, style, width (스타일을 넣지 않으면 기본값이 none으로 작동한다. 순서상관 x)
+
+
+# 테두리 vs 외곽선(outline)?
+외곽선 -> 버튼같은 인풋에 요소를 강조하기위해 쓰는것 레이아웃에 쓰는것이 아니다(박스모델에 차지 하지 않는다.)
+보더 테두리 -> 박스모델에 속해있다.
+
+border-radius 
+요소테두리 경계의 꼭짓점을 둥글게 만든다. 꼭짓점 원모양의 반지름이 30px
+%를 사용하면 타원형으로도 만들 수 있다. 여러가지 값도 입력가능. boder style을 없애도 가능하다.
+
+*/
+
+.box{
+    width: 300px;
+    height: 100px;
+  
+    /* border-style이 none이면 모든게 보이지 않음 */
+    border-style: solid dotted;
+    border-width: 5px;
+    border-color: aqua yellow;
+    border-radius: 50px 10px;
+    
+    background-color: palevioletred;
+}
+
+.box2{
+    width: 100px;
+    height: 100px;
+   
+    border: dotted red 5px;
+    background-color: skyblue;
+    border-radius: 100px;
+}

@@ -1,0 +1,51 @@
+/*  마진 상쇄, 마진 겹침, 마진 중복 (margin collapsing)
+
+여러 블록요소들의 위아래(top/bottom) margin이 경우에 따라 가장 큰 크기를 가진 margin으로 결합(상쇄)되는 현상.
+3가지 경우에 일어난다.
+
+1. 인접형제
+두 형제 요소의 위/아래 여백이 만나 상쇄된다.
+
+2. 부모-자식 간
+- 부모 블록에 border, padding, inlinc content가 없어서 부모와 자식의 margin-top이 만나는 경우
+- 부모 블록에 border, padding, inline content가 없고, 부모-자식을 분리할 height값이 지정되지 않아
+    부모와 자식의 margin-bottom이 만나는 경우
+
+3. 빈 블록
+- border, padding, content가 없고 height 또한 존재하지 않으면, 해당 블록의 margin-top과 margin-bottom이 상쇄된다.
+
+*/
+
+/* 1. 인접형제 예시 (자식 요소들의 마진값이 겹쳐져 있는 상태)*/
+body{
+    margin: 0;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* 2. 부모-자식간 상쇄 */
+#parent {
+    width: 100px;
+    height: 100px;
+
+    margin-top: 30px;
+    padding: 0.1px;
+    background-color: aquamarine;
+}
+#child {
+    width: 30px;
+    height: 30px;
+
+    margin-top: 40px;
+    background-color: red;
+}
+
+
+/* 03.빈 블록 */
+
