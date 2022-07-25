@@ -1,0 +1,104 @@
+/* 
+    position과 normal flow
+
+    * position - 문서 상에 요소를 배치하는 방법을 지정한다.
+    * normal flow : 요소의 레이아웃을 변경하지 않을 시 이 요소가 자동적으로 흐름적으로 배치될것이다. 그게바로 노멀플로우
+
+    position 기본값 -> static 
+
+    * static: 일반적인 normal flow에 따라 배치를 한다. 별도의 설정하지않으면 기본값.
+              top botoom left right를 사용할 수 없다. 완전히 무시된다. 
+
+    * relative: 문서를 흐름에 따라 배치하고, 자기 자신(position이 static일때)을 기준으로 top,bottom,left의 값에 따라
+                오프셋을 적용한다. 오프셋은 다른 요소에는 영향을 주지않는다. 따라서 페이지 레이아웃에서
+                요소가 차지하는 공간은 static일 때와 같다.
+                (static처럼 자리를잡고 그자리에서 위아래값에 따라 움직이게된다.)
+
+                top값을 설정하고 bot값을 설정하면 bottom값은 무시를 하게 된다.
+
+
+    * absolute: 일반적인 normal flow를 제거하고, 페이지 레이아웃에 공간도 배정하지 않는다. 대신 가장 가까운 위치
+                지정 조상 요소에 대해 상대적으로 배치하낟. 단 조상중 위치 지정요소가 없다면 초기 컨테이닝 블록을 기준으로 삼는다.
+                ⭐️밑 예제 참조하기 
+                
+    * fixed: absolute와 마찬가지로 요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않는다.
+             대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치한다. (absolute의 차이점 기준점이 정해져있다.)
+
+    * sticky: normal flow에 따라 배치하고, 스크롤을하게되면 가장 가까운 스크롤되는 조상
+*/
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 5px  orange solid;
+    margin-left: 100px;
+}
+
+/* #box {
+    background-color: blueviolet;
+    position: relative;
+    top: -50px;
+    left: -80px;
+} */
+
+
+/*  absolute (absolute 설정하게되면 div위에 얹어져있음)
+    top을 설정할때 어떤기준으로 옮기게 된 것이냐면 body를 기준으로 100px이 옮기게 된것이다.
+    지금 조상은 body밖에 없기 때문에 기준을 body로 삼았다.
+
+    position: absoulte인 요소는,
+    조상중에서 position이 static이 아닌 요소를 찾아 기준점을 삼는다.
+    기준점을 삼고싶은 조상(부모)한테 position을 넣어서 사용하는게 대다수이다. 
+
+    스크롤을 올리면 부모div랑 같이 따라올라감
+*/
+/* #box1 {
+    width: 150px;
+    height: 100px;
+    border-color: blue;
+    background-color: skyblue;
+    border-radius: 30px;
+
+    position: absolute;
+
+    top: 100px;
+} */
+
+
+
+/* fixed 
+    뷰포트를 기준으로 삼기 때문에 스크롤을 올려도 따라올라가지 않음. 그자리에 그대로있음.
+    항상보이는 네비게이션바 같은 곳에 많이 쓰인다.
+*/
+
+/* #parent {
+    position: relative;
+}
+
+#box2 { 
+    width: 150px;
+    height: 100px;
+    border-color:darkblue;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+} */
+
+
+/*sticky*/
+#parent {
+    position: sticky;
+    top: 100px; /* 바뀌지 않음 */
+    left: 100px;
+}
+
+#box2 { 
+    width: 150px;
+    height: 100px;
+    border-color:darkblue;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+}

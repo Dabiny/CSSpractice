@@ -1,0 +1,61 @@
+/* 
+    레이아웃
+    display - inline, block, inline-block
+
+    inline요소: ex) span..
+        - 영역의 크기가 내부 콘텐츠 크기로 정해진다. 
+        - margin, padding의 탑과 바텀을 지정할 수 없다.
+        - 여러 요소가 가로 배치가 된다.
+    
+    block요소: ex) div...
+        - 영역의 크기를 width, height를 지정할 수 있다.
+        - width를 지정하지 않으면 가로 전체를 차지한다.
+        - 여러 요소가 세로 배치된다.
+    
+    inline-block요소: ex)input...
+        - 영역의 크기를 width, height를 지정할 수 있다.
+        - 여러 요소가 가로 배치가 된다.
+
+    
+    레이아웃 요소를 없애는 방법 - display: none, visibility: hidden
+    둘이차이점
+    - display : 아예 브라우저에 그리지않아서 구간도 따로 지정하지않는다.
+    - visibility : 디브의 구간은 있지만 그안의 스타일링 요소가 보이지않는다. 
+
+    
+*/
+
+span {
+    display: inline-block;
+    width: 30px;
+    height: 50px;
+
+    background-color: blue;
+}
+
+div {
+    height: 200px;
+    border: solid;
+}
+
+/* diplay none  code상에선 존재하지만 브라우저에선 아예 그리지 않음.*/
+/* .box2 {
+    display:none;
+} */
+
+/* visibility 문서의 레이아웃을 변경하지않고 요소를 보이거나 숨긴다.*/
+.box2 {
+    visibility: hidden;
+}
+
+.box1 {
+    background-color: orange;
+}
+
+.box2 {
+    background-color: teal;
+}
+
+.box3 {
+    background-color: darkgoldenrod;
+}

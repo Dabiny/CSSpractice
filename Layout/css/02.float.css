@@ -1,0 +1,29 @@
+/*
+    float (둥둥뜨게만드는 속성)
+    한 요소가 보통 흐름(normal flow)으로부터 빠져 텍스트 및 인라인 요소가 그 주위를 감싸는 자기 컨테이너의
+    좌우측을 따라 배치되어야함을 지정한다.
+    * 보통흐름: 개발자가 의도적으로 조정한게 아닌 css기본으로 흘러가는 방식(블록속성같은).
+
+
+    float : none, left, right
+
+    기사문처럼 생겼다. 많이 사용하진 않는다.(예전만큼)
+
+
+*/
+.container {
+    border: solid;
+    width: 500px;
+    margin-left: 100px;
+}
+.image {
+    width: 100px;
+    height: 100px;
+
+    background-color: plum;
+    border: 2px solid blueviolet;
+    
+    float: right;
+    margin: 10px;
+}
+
