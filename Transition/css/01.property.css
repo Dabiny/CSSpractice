@@ -1,0 +1,32 @@
+/* 
+    transition-duration <time> 자료형 숫자에다가 단위를 붙임 s, ms
+    transition property 
+    
+    A 상태와 B 상태
+    얼마만큼 시간이 걸릴지 설정
+
+    * margin-right
+
+    슈웅하고 움직였다가 뚝 끊기는 것은 호버에 트렌지션을 주었을때 생기는 현상이고
+    계속 스무스하게 움직이게 되는건 박스에 둬야 한다.
+*/
+
+.box {
+    width: 300px;
+    height: 80px;
+    border: 2px dashed teal;
+
+    background-color: thistle;
+    font-size: 50px;
+    color:white;
+}
+
+.box:hover {
+    width: 340px;
+    background-color: dodgerblue;
+    color: black;
+    font-size: 60px;
+
+    transition-property: all;
+    transition-duration: 0.5s;
+}

@@ -1,0 +1,39 @@
+/* 
+    z-index
+    z축 순서를 지정한다.
+
+    z축 : 쌓임순서를 의미한다. layer 느낌?
+
+    * z-index : auto가 기본값
+    기본적인 쌓임순서: 앞에있는경우는 position이 static이 아닌애들이다. 
+    static인애들 < static이 아닌애들
+    모두 스태틱인애들이라면 순서있게 쌓인다.
+
+    * 레이어 층을 임의로 주고싶다면 z-index를 활용하자.
+    경고창이나 공지사항창을 맨앞에둘땐 다른 레이어보다 큰값을 준다. 
+
+    
+*/
+
+
+div {
+    width: 150px;
+    height: 150px;
+    background-color: blanchedalmond;
+    border: 3px solid orange;
+}
+
+#box2, #box3 {
+    margin-top: -30px;
+}
+
+#box2{
+    margin-left: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+#box3 {
+    position: relative;
+    z-index: 2;
+}

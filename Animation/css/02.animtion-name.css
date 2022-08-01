@@ -1,0 +1,58 @@
+/*
+    🎀 animation-name (keyframes의 이름)
+    trandition property와 대응하는 아이
+
+    🎀 animtion-duration 
+    애니메이션이 한 사이클을 완료하는데 걸리는 시간을 의미한다.
+
+    🎀 animation-delay
+    애니메이션이 시작할 시점을 지정한다. 시작즉시, 잠시 후에 또는 애니메이션이 일부 진행한 시점부터
+    시작할 수 잇따.
+    시작하고나서 한 사이클을 재생하는데 약간의 지연시간을 둘 수 있는데 그 지연시간을 얼마만큼 둘건지 설정.
+    양수값을 지정하면 애니메이션이 시작되어야 지연되는데 음수값을 지정하면 바로시작되는데 애니메이션이 즁간부터 마치 1초전에 재생이 된것처럼 시작한다.
+
+    🎀 animation-timing-function
+    bazier(임의로 설정해주는값), ease(기본값), linear(등속도), ease-in-out ..등
+*/
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(77, 77, 114);
+    background-color: aquamarine;
+    border-radius: 30px;
+
+    /* animation: my-animation 2s infinite; */
+}
+
+.box1 {
+    background-color: pink;
+    animation: my-animation 1s infinite;
+    animation-delay: -0.3s;
+}
+.box2 {
+    background-color: skyblue;
+    animation: my-animation 1s infinite;
+    animation-delay: 0.3s;
+}
+.box3 {
+    background-color: palegreen;
+    animation: my-animation 1s infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes my-animation {
+    0% { font-size: 20px; }
+    50% { 
+        width: 500px;
+        font-size: 50px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+
+.box:hover{
+    animation: my-animation 2s infinite;
+}
+

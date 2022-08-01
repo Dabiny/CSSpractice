@@ -1,0 +1,20 @@
+/*
+    transform-origin
+    transform의 기준점 원점을 변경시키는 별도의 요소.
+    될수 있으면 center를 유지하는게 좋지만 animation을 쓸땐 유용하게 쓴다.
+
+    transform-origin: center;
+    transform-origin: top left;
+    transform-origin: 50px 50px;
+    transform-ofigin: bottom right 60px;
+
+*/
+
+
+#hamster {
+    width: 300px;
+    margin: 100px;
+
+    transform: rotate(20deg);
+    transform-origin: 50px 100px;
+}

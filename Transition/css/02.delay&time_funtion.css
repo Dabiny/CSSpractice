@@ -1,0 +1,42 @@
+/*
+
+    transition-delay & transition-timing-function
+
+    transition-delay
+    무언가 트랜지션되는것을 지연시키는것. <time>값을 쓴다. 요소가 여러개 있을때 요소들에게 딜레이를 주게되면 
+    무지개빛을 연출할수 잇다던지 할 수있다.
+
+    transition-timing-function  
+    ease, ease-in, ...
+
+    transition short-hand
+    (1. property name | duration)
+    (2. property name | duration | delay )
+    (3. name | duration | timing function | delay)
+
+*/
+
+.box {
+    width: 300px;
+    height: 80px;
+    border: 2px dashed teal;
+
+    background-color: thistle;
+    font-size: 50px;
+    color:white;
+
+    transition-property: height, background-color;
+    transition-duration: 3s;
+    transition-delay: 3s;
+
+    transition-timing-function: ease-out;
+
+    /* short-hand*/
+    /* transition: background-color height 3s ease-in-out 1s; */
+
+}
+
+.box:hover {
+    background-color: dodgerblue;
+    height: 400px;
+}

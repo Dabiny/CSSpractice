@@ -1,0 +1,16 @@
+/*
+    translate
+    이동을 담당하는 함수이다.
+    <length>, %단위도 쓸수 있다. 한가지 값도 쓸 수 있는데 입력하게되면 200px, 0 이런식으로 이동한다.
+    %는 0,0에서 퍼센트로 이동시키는것이다.
+    
+    translate(x, y)
+    translateX()
+    translateY()
+
+*/
+
+#hamster {
+    width: 300px;
+    transform: translate(-150px);
+}

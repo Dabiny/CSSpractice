@@ -1,0 +1,18 @@
+/*
+    rotate()
+    인자에 <angle>값을 적용한다. 값을 하나만 받을 수 있다. 
+    양수일때는 시계방향으로 움직이고, 마이너스일땐 반시계방향으로 움직인다.
+    
+    deg : 45도 === 45deg, 
+    grad 
+    rad
+    turn: 1turn, 0turn, 0.25turn 바퀴를 뜻함.
+
+    돌려질때 튀어나와있는 부분이 아래있던 문단을 가린다. 
+*/
+
+#hamster {
+    width: 300px;
+
+    transform: rotate(45deg) scale(1);
+}

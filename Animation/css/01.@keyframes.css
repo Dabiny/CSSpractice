@@ -1,0 +1,36 @@
+/*
+    @keyframes
+    여러개의 스타일을 자동으로 재생시키는 개념이라 여러가지작성을 하기위해 키프레임을 사용한다.
+    애니메이션 중간중간의 특정 지점들을 거칠 수 있는 키프레임들을 설정할수 있다.
+
+    @keyframes aaa {
+        0% { top: 0 }
+        100& {top: 100 }
+    }
+
+*/
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 10px solid seagreen;
+    background-color: aquamarine;
+    border-radius: 30px;
+
+    /* animation: my-animation 2s infinite; */
+}
+
+@keyframes my-animation {
+    0% { font-size: 20px; }
+    50% { 
+        width: 500px;
+        font-size: 80px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+
+.box:hover{
+    animation: my-animation 2s infinite;
+}

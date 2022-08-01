@@ -1,0 +1,18 @@
+/*
+    skew
+    각도를 사용해 기울여진다. 한개를 사용하면 엑스축으로만 움직인다.
+    deg, turn..
+
+    skew()
+    skewX()
+    skewY()
+
+    굿노트 그림참조
+*/
+
+#hamster {
+    width: 300px;
+    margin: 100px;
+
+    transform: skew(20deg, 30deg);
+}

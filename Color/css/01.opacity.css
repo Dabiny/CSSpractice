@@ -1,0 +1,22 @@
+/*
+    opacity
+    내부에있는 모든요소의 불투명도를 설정한다.기본값은 1이다. 0.0 ~ 1.0
+
+    rbga로도 투명도 조절가능하지만 다른점은 rgba는 색만 투명도를 조절하고 opacity는 모든요소를 조절한다.
+
+*/
+
+.floating-box {
+    width: 400px;
+    height: 400px;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    /* background-color: aqua; */
+    opacity: 0.5;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png");
+    background-color: royalblue;
+}

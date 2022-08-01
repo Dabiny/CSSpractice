@@ -2,4 +2,16 @@
     overflow
         요소의 콘텐츠가 너무 커서 요소의 블록 서식 맥락에 맞출 수 없을 때의 처리법을 지정한다.
 
+    overflow: visable(기본값), hidden(넘쳐 흐르는부분이 잘려선 ㅜㄴ에 보이지않게됨), 
+                scroll(스크롤바 생성), auto (브라우저가 자동으로 값을 정하게된다.)
+    
 */
+
+div{
+    background-color: beige;
+
+    width: 200px;
+    height: 150px;
+
+    overflow: auto;
+}

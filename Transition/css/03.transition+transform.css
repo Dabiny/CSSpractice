@@ -1,0 +1,22 @@
+/*
+    transition (전환)
+
+    transition + transform
+
+*/
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 10px solid seagreen;
+    background-color: aquamarine;
+    border-radius: 30px;
+
+    transform-origin: bottom;
+    transition: all 1s ease-in-out;
+}
+
+.box:hover {
+    transform: rotate(360deg);
+    
+}

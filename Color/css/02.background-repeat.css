@@ -1,0 +1,61 @@
+/*
+    ⭐️ background-repeat
+    배경 이미지의 반복 방법을 지정한다. (바둑판 ,늘리기)
+    1. repeat (기본값) 이미지가 넘칠경우 자른다. 
+    2. repeat-x(가로축만 이미지를넣는다), repeat-y (세로축만 이미지를 넣는다.)
+    3. no-repeat (바둑판을 하고싶지 않을때 한번만 넣고 싶을때)
+
+    ⭐️ background-position
+    백그라운드의 이미지 위치를 바꿀수있다. top left(0,0)이 기준점
+    키워드도 사용가능하다.(여러개써도 가능) top bottom center
+    background-position: x축 y축; 입력
+
+    ⭐️ backround-origin
+    배경의 원점을 테두리 시작점(border), 테두리 내부, 안쪽 여백(padding) 내부중 하나로 지정한다.
+    1. border-box
+    2. padding-box (초기값)
+    3. content-box
+
+    ⭐️ background-size
+    요소 배경 이미지의 크기를 설정한다. 그대로 두거나, 늘리고 줄이거나, 공간에 맞출 수 있다.
+    1. contain: 이미지가 잘리거나 찌그러지지 않는 한도 내에서 제일 크게 설정
+    2. cover: 이미지가 찌그러지지않는 한도 내에서 제일 크게설정하는데 이미지 사로세로비가 요소와 다르다면 이미지를 세로 또는
+       가로 방향으로 잘라내어 빈 공간이 생기지 않도록 설정한다.
+    3. auto: 기본값이며 배경 이미지의 원본 크기를 유지한다.
+
+    4. <length> 값을 콕찍어서 지정할 수있게된다. 그대신 비율은 보장 못함. 
+        비율을 유지하고 싶다면 숫자 한개만 입력하면 width에 맞춰서 늘어난다.
+      
+      <percentage> cover랑 비슷할 수 있지만 빈영역이 보여진다. 가로값만 100% 맞춰지는 것.
+
+    
+    ⭐️ background short-hand
+        단축속성은 색상, 이미지, 원점, 크기, 반복 등 여러 배경 스타일을 한번에 지정한다.
+    
+*/
+
+
+/* repeat position origin 예시 */
+/* background-position: right center; */
+/* .box {
+    height: 600px;
+    border: 30px dashed red;
+    padding: 30px;
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/moon.jpg");
+    background-repeat: no-repeat;
+
+    background-origin: padding-box;
+} */ 
+
+
+/* size 예시 */
+
+.box {
+    height: 150px;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/moon.jpg");
+    border: cornflowerblue 5px solid;
+    background-repeat: no-repeat;
+    background-color: aqua;
+    background-size: contain;
+}

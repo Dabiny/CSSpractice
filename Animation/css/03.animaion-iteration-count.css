@@ -1,0 +1,84 @@
+/*
+    🎀 animation-iteration-count
+    재생횟수를 조절할 수 있다. 그 숫자만큼만 설정할수도있다. 
+    <number> , infinite
+
+    🎀 animation-direction
+    transition같은 경우는 단방향으로 지정이 되어있는데 애니메이션같은경우에는 키프레임을 만들어놓고 쓰기때문에 이걸 바꿀 수 있는게
+    디렉션이다.
+    normal, reverse, alternate, alternate-reverse
+
+    🎀 animation-play-state: paused;
+    애니메이션을 일시정시 시킨다.
+
+    🎀 animation-fill-mode
+    애니메이션이 실행 전과 후에 대상에 스타일을 적용하는 방법을 지정한다.
+    기본값은 none이다. 스타일을 적용하지 않는다. (스타일 : 원래갖고있는 스타일을 갖고있는데 키프레임즈는 쓰지마라)
+    forword : 끝난모습의 keyframes를 유지해라
+    backwards : 시작모습의 키프레임을 유지해라
+
+    1. 기존스타일: div, .box2에 설정한 스타일
+    2. 애니메이션 키프레임즈에 있는 스타일
+        ----------------------------
+        1) 키프레임즈 첫번째 스타일 
+        2) ...ing
+        3) keyframes 마지막 스타일 블랙
+        ------ 애니메이션 진행단계 ------
+        4) 기존스타일로 돌아옴 <- 이걸 제어할 수 있는게 fill mode 
+
+
+    🎀 animation-shorthand
+    animation: name | duration | timing-function | delay | iteration-count | direction | fill-mode;
+    MDN 참조하기!
+*/
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(77, 77, 114);
+    background-color: aquamarine;
+    border-radius: 60px;
+    
+    /* animation: my-animation 2s infinite; */
+}
+
+.box1 {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
+}
+
+.box1:hover{
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+        font-size: 40px;
+    }
+    to {
+        transform: rotate(360deg);
+        font-size: 40px;
+    }
+}
+
+
+.box2 {
+    background-color: aqua;
+    animation: fill-mode 3s linear 3s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes fill-mode {
+    0% {background-color: orange;}
+    50% {
+        width: 200px;
+    }
+    100% {background-color: black;}
+}
+
+
