@@ -1,0 +1,66 @@
+/*
+    Grid
+
+    Container - display
+    grid; 블록 그리드형
+    inline-grid; 인라인인데 그리드형
+    바깥쪽 컨테이너를 그리드로 나누고 안쪽 아이템 형제들은 나란히 두는 모양이다.
+
+    grid-temlate-columns, grid-template-rows
+    몇개의 행렬을 정의할 것인지 정하는 요소
+    grid-template-columns: 100px 100px 100px 세개 로 나누고싶다. 
+    아무리늘려도 px를 지킨다. 
+
+    fr이라는 단위를 사용하게되면 비율로 정해지게된다. 
+    함수표현도 가능하다. repeat(4번반복할거다, 1fr를or100px를);
+
+
+    grid-tempalate-areas
+    영역을 차지하게(땅따먹기) 해주는 요소.
+    .을 쓰면 한칸이 비어진다. 
+
+    row-gap , column-gap
+    행렬의 간격을 정해주는 요소이다. (gutter를 설정해주는 요소)
+    gap요소로 한꺼번에 정할 수 잇다.
+    gap: x, y;
+
+    
+    
+*/
+
+.container {
+    border: 5px dashed orange;
+    
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "h h h h h"
+    "m m m s s"
+    "f f f f f"
+    ;
+    /* row-gap: 20px;
+    column-gap: 5px; */
+    gap: 20px 5px;
+}
+
+.item {
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}
+
+.header {
+    grid-area: h;
+}
+.main {
+    grid-area: m;
+}
+.sidebar {
+    grid-area: s;
+}
+.footer {
+    grid-area: f;
+}

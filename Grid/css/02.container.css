@@ -1,0 +1,73 @@
+/*
+grid-auto-rows, grid-auto-columns
+grid-template-rows,columns를 정하고나서 더 요소를 추가하면 템플릿로우컬럼에
+설정되지 않은 요소(명시되지 않은 요소들이)들이 넘칠 수 있는데 그것을 (암묵적으로)잡아주는 설정이 그리드 오토 이다. 
+다른 template된 아이템들은 그 크기에 맞춰서 비율이 줄어들지만 넘친 아이템들은 100px로
+고정해놨기 때문에 비율에맞게 줄어들지 않음.
+
+grid-auto-flow
+아이템들의 자리잡는 흐름을 어떻게 흘러갈건지 설정해주는 요소 
+row, column, dense(추가적으로 붙여줄 수있는 키워드 . 빈영역이 다른 요소들이 채워주게하는 속성)
+
+grid(short-hand)
+앞은 명시적인 속성(template..), 뒤는 암시적인속성(auto...) 
+grid: row설정 / column설정
+로우 컬럼 명/명 가능 명/암으로도 설정하수있고 암/명 이렇게도 쓸 수 있다. 
+
+justify-content
+align-content 
+주축, 크로스축을 사용해 아이템덩어리 위치를 이동시켜주는 것. space-between키워드도 사용가능하다. 
+
+
+justify-items
+align-items
+space-요소를 쓸 수 없고, 그리드 칸 안에 하나의 아이템에 대한 정렬을 정의하는데 사용한다.
+기본값은 stretch이다. start, end 컨텐츠의 길이만큼 자리잡고있다. 
+
+*/
+
+.container {
+    border: 5px dashed orange;
+    
+    width: 400px;
+    height: 400px;
+    display: grid;
+
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+    grid: auto-flow row dense repeat(3, 1fr) / repeat(3, 1fr);
+
+    /* gap: 20px 5px; */
+
+    /* grid-auto-rows: 100px; */
+    /* grid-auto-flow: row dense; */
+
+    justify-items: center;
+    align-items: center;
+}
+
+.item {
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+}
+.item:nth-child(2){
+    grid-column: span 3;
+    width: 150px;
+    height: 50px;
+}
+
+.header {
+    grid-area: h;
+}
+.main {
+    grid-area: m;
+}
+.sidebar {
+    grid-area: s;
+}
+.footer {
+    grid-area: f;
+}

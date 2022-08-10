@@ -1,0 +1,76 @@
+/*
+justify-content (container) 메인축에 관한 이야기, 여러개의 줄에대해서 어떻게 정렬할건지에 대한 이야기
+주축을 기준으로(시작부분인지 끝부분인지) 아템들을 어떻게 정렬할지 정하는 요소이다. 
+flex-start : flex 주축 스타트 위치부터 정렬.
+flex-end: flex 주축이 끝나는 위치에 정렬.
+center: 가운데 정렬
+space-between: 가로의 컨테이너를 쭉 늘렸을 때 아이템사이에있는 간격이 동일하게 나뉘어져있다. 
+    주축을기준으로 스타트랑 끝에 여백없이 꽉 자리잡게된다.
+flex-direction을 어떻게 설정해야할지 정하고 설정하는게 좋다. 
+space-around
+
+
+align-items (container) 교차축에 관한 이야기 전체 컨테이너 입장에서 한줄을 어디다가 둘건지 개념이다.
+flex자체는 1차원적인 한줄에대한 이야기이다. cross에는 여러개의 아이템을 가질 수 없다. 한줄을 어느위치에 자리잡을건지
+정하는 것을 align-item로 정한다. 
+
+stretch: 기본값이며 마치 위에서 끝까지 블록요소처럼 전부다 차지한다.
+flex-start: 교차축의 시작점에 자리잡게된다.
+flex-end: 교차축의 끝점에 자리잡게된다. 
+center: 전체중에서 가운데로 들어가게된다.
+
+
+align-content (container) 여러개의 줄에 대해서 어디다가 둘건지 개념이다. 
+콘텐츠 사이와 콘텐츠 주위 빈 공간을 블렉스박스의 교차축, 그리드의 블록 축을 따라 배치하는 방식을 결정한다.
+space-between, around 사용가능.
+
+
+align-self (item)
+자기자신만 align하겠다는 요소이다. 컨테이너 내에서 각각 두개로 나뉘게된다. 
+
+*/
+
+/* .container {
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+} */
+
+/* .container {
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+/* .container {
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+
+} */
+.container {
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+.item {
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}
+
+.item:nth-child(4) {
+    align-self: flex-end;
+}

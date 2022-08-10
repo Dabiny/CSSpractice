@@ -1,0 +1,47 @@
+/*
+    grid-row (short-end)
+    grid-row:start/end
+
+    grid-row-start,end
+    그리드 선이 몇번째 선인지 숫자로 적는다. 
+    마이너스 넘버링은 템플릿으로 명시적으로 썼을때만 나타난다.
+    grid-row
+    grid-column 
+
+    grid-area
+    단축속성도 가능한 애다. 
+    grid-area: r-s / c-s / r-e / c-e;
+
+    order
+    아이템들의 우선순위를 부여하는 것이다. 
+
+    z-index
+    아이템들의 z축순위를 부여하는 것이다.
+
+    grid 단위 fr(비율로 움직임), (단어의 길이에 따라달라지는)min-content, (컨텐트를 한줄에 볼수있을 때까지 늘리는)max-content
+    auto-fill, auto-fit 남는공간이 생겼을때 어떻게 대처할지가 다르다. 
+
+    minmax(min, max)
+    가장작아질수있는커질수있는 크기설정
+*/
+
+.container {
+    border: 5px dashed orange; 
+    display: grid;
+    /* grid-template-rows: repeat(3, 100px); */
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-auto-rows: 50px;
+}
+
+.item {
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}
+
+.item:first-child {
+    background-color: coral;
+    /* grid-row: 3 / span 1;
+    grid-column: 2 / -1; */
+    grid-area: 4 / 1 / 2 / -2;
+}

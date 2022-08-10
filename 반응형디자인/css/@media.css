@@ -1,0 +1,61 @@
+/*
+    미디어 쿼리 기본
+    and (&&)나 ,(||)를 사용할 수 있다.
+    @media media-type and (media-feature-rule) {
+            css rules go here
+    }
+    미디어 쿼리는 최상단에 작성해줘야 한다..
+
+    구성요소:
+    * 여기 코드가 어떤 미디어를 위한 것인지 브라우저에 알려주는 미디어 유형 (ex. 인쇄 또는 스크린)
+    * 괄호로 묶은 css규칙이 적용되기 위해 전달되어야 하는 규칙 또는 조건문 격인 미디어 표현식
+    * 조건문을 통과하고 미디어 유형이 올바른 경우 적용되는 css 규칙 집합.
+
+    미디어유형
+    * all 
+    * 
+
+    () 유형
+    * (orientation: landscape) : 가로모드(가로폭이 세로폭보다 길어질때)일때만 실행해라.
+    * (max-width: 300px) : 최대 넓이가 300px일때 미디어 쿼리를 적용.
+    * (min-width: 300px)
+
+
+*/
+
+body {
+    background-color: beige;
+}
+
+/* 모바일 퍼스트 작은것부터 -> 큰것까지 데스크탑을 큰것부터 -> 작은것 */
+.title {
+    font-size: 48px;
+}
+
+@media screen and (min-width: 488px) {
+    body {
+        background-color: tomato;
+    }
+    .title {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-color: violet;
+    }
+    .title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: green;
+    }
+    .title {
+        font-size: 12px;
+    }
+}
+

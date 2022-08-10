@@ -1,0 +1,125 @@
+/* Flexbox
+css3에서 추가된 개념. 여러개의 요소들이 있을때 쭉 나열하는방법이 정해져있지 않았다.
+div는 블록요소라 옆 구역에는 다른 아이템들이 들어올 수 없게된다. display: inline을 써도 좋지않은 방법.
+무언가 요소를 정렬하기 위해서 나온 개념이다.
+flexbox는 정렬하고 싶은 아이템들의 부모에다가 적용하면 자식아이템들이 정렬된다.
+
+용어 -
+1차원 정렬에 관한 용어
+flex container(자식아이템들이 속해있는 부모컨테이너), flex item (자식 아이템들),
+main axis(주축 기본값 가로), cross axis(주축에서 수직을 이루는 축 기본값 세로)
+
+display 지금까지 우리가 알고있었던 앞뒤 정렬을 정의하는 요소. 
+display를 설정하는건 내부에 설정하는게 아니라 요소를 감쌀 컨테이너에 설정하는것이다. 
+- block
+- inline
+- inline-block
+- inline-flex
+
+- <display-outside> (바깥쪽 요소의 관계를 어떻게 할건지...) 
+- <disolay-inside> (안쪽 요소의 관계 컨테이너 내부의 어덯게 레이아웃할건지..)
+* 둘이 아예 다른 개념으로 이해하는게 편하다. 
+
+flex를 공부하기전 유의해야할 2가지.
+1. container에 사용하는 요소인건지
+2. items에 사용하는 요소인건지 확실히 구분하여 공부하기.
+
+flex-direction (container)
+컨테이너 내의 아이템을 배치할때 사용할 주축(main왼오,cross위아래) 및 방향(정방향,역방향)을 지정하는 요소.
+row : 플렉스 컨테이너의 주축이 글의 작성 방향과 동일하다. 주축의 시작점과 끝점이 콘텐츠 방향과 동일하다.
+row-reverse: row와 동일하게 동작하지만 시작점과 끝점이 반대에 위치한다.
+column: 플렉스 컨테이너의 주축이 블록 축과 동일하다. 주축의 시작점과 끝점이, 글 작성 모드의 이전 지점및 이후 지점과 동일하다.
+cloumn-reverse: coloumn과 동일하게 동작하지만 시작점과 끝점이 반대에 위치한다.
+
+flex-wrap (container)
+요소들이 강제로 한줄에 배치되게 할 것인지, 혹은 여러행으로 나누어 표현할 것인지 결정하는 요소이다.
+flew-wrap을 사용하지 않은채로 브라우저 크기를 줄이게 된다면 아이템요소가 세로로 찌그러진다. 
+- nowrap : 무조건 한줄에 배치한다 (기본값) 시작점은 flex-direction에 따른다.
+- wrap : 여러행에 걸쳐서 배치된다. 위에서 아래로 쌓인다. 자기의width를 지키게 된다. 행렬의 여백은 height를 조절해주면된다.
+- wrap-reverse : 시작점과 끝점이 반대되서 wrap된다. 아래에서부터 위로 변경된다. 
+
+flex-flow (short hand)
+flex-flow: row wrap... 스페이싱으로 구분하면된다. 
+
+
+order (items)
+플렉스 또는 그리드 컨테이너 안에서 현재 요소의 배치 순서를 지정한다. order를 지정해주지않으면 기본값 0이다 (HTML코드 순서)
+<integer> 사용 -도 사용가능. 오름차순으로 정렬시키면된다. -1이 앞 1이 뒤
+논리적인 순서 탭 순서와 전혀상관없이 눈으로 보여지는 것에만 바뀌어지는 요소이다. 
+order를 적용하고 싶다면 부모요소에 display: flex나 grid가 설정되어있어야 바뀌어진다.
+
+flex-grow (items)
+item 요소가 자기가 할당 가능한 공간의 정도를 선언한다. 기본값은 0 이다(늘어나지 말아라 뜻). 
+컨테이너 남은 공간을 다쓰고 싶을 때 쓴다. 아이템들끼리 남은자리 공간을 나눠서 늘린다. 
+flex-wrap: wrap 설정시 개행된 아이템들끼리 또 남은자리를 나눠서 늘린다.
+<number> 값을 쓰고 음수값은 허용되지 않는다. 0.0 ~
+만약 형제 요소로 렌더링된 모든 아이템 요소들이 flex-grow값을 갖는다면 컨테이너 내부에서 동일한 공간을 할당받는다. 하지만
+flex-grow값으로 다른 소수값을 지정한다면, 그에 따라 다른 공간값을 나누어 할당받게 된다.
+(각각 따로 값을 지정해주면 지정해준 애들끼리 값만큼 나눠서 공간을 차지하게 된다. 메뉴나 네비게이션바를 만들때 유용하다.)
+
+flex-shrink (items)
+grow와 비슷하지만 완전히 반대로 작동한다. 아이템보다 컨테이너가 작아서 아이템들이 컨테이너로 들어가지 못하는 상황에 얼마나 아이템들이
+작아질지 설정한다. flex를 설정후 브라우저를 줄이게되면 아이템요소들이 찌부러진다. flex-shrink의 기본값 1이 들어가서 찌부러지는 것.
+<number> 값을 쓰고 음수값은 허용되지 않는다. 0.0 ~
+컨테이너가 아무리 작아져도 shirink를 0으로 선언하게 되면 컨텐트 박스의 크기를 유지하고 있다.
+number 크기값이 큰 순서부터 먼저 줄어들게 된다. 줄어든 크기를 2번과 3번이 나눠서 가졌다고 보면된다. 
+grow와 완전히 같은 동작원리이지만 shrink는 직관적으로 줄어드는게 잘 보이지 않아서 헷갈릴수 있다. 하지만 원리는 같음.
+
+flex-basis (items)
+플렉스 아이템의 초기 크기를 지정한다. 쉬링크되지도 않고 그로우도 되지 않았을때의 초기 크기값 (요소자체의 원래 width값)
+늘어나고 줄어드는 비율을 컨트롤 할 수 있다. 
+<width> <persentage>값을 사용한다. 아이템의 width값을 설정하지않으면 자기가 차지하고 있는 영역의 크기만큼만 차지한다. 
+0을 사용하게되면 직관적으로 grow를 사용할 수 있다.
+
+flex (short hand)
+flex: flex-grow flex-shrink flex-basis 순으로 작성해야한다. 
+이니셜값: 0 1 auto;
+한개 또는 두개의 단위 없는 숫자 값을 사용할 때 <flex-basis>의 값은 auto가 아니라 0이된다. (걍 외우기)
+값은 무조건 첫번째 값은 <number> 이어야 한다. 두번째 값은 <number> 세번째값은 <number> 나 <px>로 사용하면 basis로 인식
+
+
+*/
+.container {
+    height: 250px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: coloumn wrap
+    
+}
+
+.item {
+    /* width: 200px; */
+    height: 50px;
+    margin: 5px;
+    background-color: aqua;
+    border: 3px solid blue;
+    font-size: 30px;
+
+    /* flex-grow: 1; */
+    flex-basis: 0;
+} 
+
+.item:nth-child(3) {
+    /* order: 1; */
+    flex-grow: 3;
+    flex-shrink: 3;
+}
+/* .item:nth-child(5) {
+    order: 2;
+}
+.item:nth-child(4) {
+    order: -100;
+} */
+
+.item:nth-child(2){
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+/* shrink 줄여질때 1번만 찌그러지지않고 튀어나온다 */
+.item:nth-child(1){
+    /* flex-shrink: 0; */
+    flex-grow: 5;
+}
