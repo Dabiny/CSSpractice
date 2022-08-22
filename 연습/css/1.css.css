@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: url(/Users/dabinkim/CSSpractice/연습/background.webp) no-repeat center;
+    background-size: cover;
+    /* background-attachment: scroll; */
+}
+
+.container {
+    max-width: 300px;
+    margin: 8em auto;
+    padding: 0.1px;
+    min-height: 300px;
+    background-color: azure;
+    display: block;
+    text-align: center;
+    
+}
+
+.txt1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.item {
+    text-align: center;
+
+}
+.id {
+    margin-top: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pswd {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+p {
+    letter-spacing: 0.5px;
+    margin-left: 2rem;
+    display: inline-block;
+}
+
+
+input {
+    width: 8rem;
+    height: 1.5rem;
+    
+    margin-right: 2.5rem;
+    margin-top: 15px;
+    
+}
+
+button {
+    margin-top: 2rem;
+    width: 5em;
+    height: 2em;
+    margin-bottom: 0.1rem;
+    
+
+    border: 1px solid skyblue;
+    color: rgb(111, 142, 253);
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color .5s;
+}
+
+button:hover {
+    background-color: pink;
+    
+}
+
+#dabin {
+    font-size: small;
+    text-align: center;
+    display: block;
+    margin-right: 1.7rem;
+}
+
+.logininfo {
+    text-align: center;
+}
+
+.content {
+    max-width: 500px;
+    max-height: 300px;
+    text-align: center;
+    background-color: rgb(213, 223, 234);
+    margin: 0.5px auto;
+}
